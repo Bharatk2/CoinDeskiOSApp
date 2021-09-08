@@ -6,37 +6,50 @@
 //
 
 import UIKit
-
+import Combine
 class CoinListTableViewController: UITableViewController {
+    var list = [String]()
+    var coins = [Coin]()
+    var coinListViewModel = CoinListViewModel()
+    var subscriptions = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        handleBindings()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+    }
+    
+    func handleBindings() {
+        coinListViewModel.$coins
+           .receive(on: DispatchQueue.main)
+           .sink { [weak self] items in
+            self?.coins = items
+              self?.tableView.reloadData()
+           }
+           .store(in: &subscriptions)
+    }
+  
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return coins.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CoinListCell", for: indexPath) as? CoinListTableViewCell else { return UITableViewCell() }
+    
+        cell.coinlabel.text = coins[indexPath.row].name
+      
+   
+        cell.symbolLabel.text = coins[indexPath.row].symbol
+   
+       
         return cell
     }
     

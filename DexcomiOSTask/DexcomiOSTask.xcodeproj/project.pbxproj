@@ -17,6 +17,7 @@
 		C59D222D26E9596400FEDC08 /* CoinListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D222C26E9596400FEDC08 /* CoinListViewModel.swift */; };
 		C59D222F26E959C500FEDC08 /* FetchListServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D222E26E959C500FEDC08 /* FetchListServices.swift */; };
 		C59D223526E9606200FEDC08 /* CoinListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D223426E9606200FEDC08 /* CoinListTableViewController.swift */; };
+		C59D223726E9625200FEDC08 /* CoinListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D223626E9625200FEDC08 /* CoinListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C59D222C26E9596400FEDC08 /* CoinListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListViewModel.swift; sourceTree = "<group>"; };
 		C59D222E26E959C500FEDC08 /* FetchListServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchListServices.swift; sourceTree = "<group>"; };
 		C59D223426E9606200FEDC08 /* CoinListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListTableViewController.swift; sourceTree = "<group>"; };
+		C59D223626E9625200FEDC08 /* CoinListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		C59D222226E9548B00FEDC08 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C59D223626E9625200FEDC08 /* CoinListTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				C59D220D26E953E400FEDC08 /* SceneDelegate.swift in Sources */,
 				C59D223526E9606200FEDC08 /* CoinListTableViewController.swift in Sources */,
 				C59D222F26E959C500FEDC08 /* FetchListServices.swift in Sources */,
+				C59D223726E9625200FEDC08 /* CoinListTableViewCell.swift in Sources */,
 				C59D222D26E9596400FEDC08 /* CoinListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
