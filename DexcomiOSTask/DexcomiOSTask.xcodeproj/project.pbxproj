@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C59D220B26E953E400FEDC08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D220A26E953E400FEDC08 /* AppDelegate.swift */; };
 		C59D220D26E953E400FEDC08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D220C26E953E400FEDC08 /* SceneDelegate.swift */; };
-		C59D220F26E953E400FEDC08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D220E26E953E400FEDC08 /* ViewController.swift */; };
 		C59D221226E953E400FEDC08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59D221026E953E400FEDC08 /* Main.storyboard */; };
 		C59D221426E953E900FEDC08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C59D221326E953E900FEDC08 /* Assets.xcassets */; };
 		C59D221726E953E900FEDC08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59D221526E953E900FEDC08 /* LaunchScreen.storyboard */; };
@@ -19,7 +18,6 @@
 		C59D220726E953E400FEDC08 /* DexcomiOSTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DexcomiOSTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C59D220A26E953E400FEDC08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C59D220C26E953E400FEDC08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C59D220E26E953E400FEDC08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C59D221126E953E400FEDC08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C59D221326E953E900FEDC08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C59D221626E953E900FEDC08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +54,38 @@
 		C59D220926E953E400FEDC08 /* DexcomiOSTask */ = {
 			isa = PBXGroup;
 			children = (
-				C59D220A26E953E400FEDC08 /* AppDelegate.swift */,
-				C59D220C26E953E400FEDC08 /* SceneDelegate.swift */,
-				C59D220E26E953E400FEDC08 /* ViewController.swift */,
-				C59D221026E953E400FEDC08 /* Main.storyboard */,
-				C59D221326E953E900FEDC08 /* Assets.xcassets */,
-				C59D221526E953E900FEDC08 /* LaunchScreen.storyboard */,
-				C59D221826E953E900FEDC08 /* Info.plist */,
+				C59D221E26E9542200FEDC08 /* Application */,
+				C59D222026E9544800FEDC08 /* Resources */,
+				C59D221F26E9543100FEDC08 /* Storyboards */,
 			);
 			path = DexcomiOSTask;
+			sourceTree = "<group>";
+		};
+		C59D221E26E9542200FEDC08 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C59D220A26E953E400FEDC08 /* AppDelegate.swift */,
+				C59D220C26E953E400FEDC08 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		C59D221F26E9543100FEDC08 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C59D221026E953E400FEDC08 /* Main.storyboard */,
+				C59D221526E953E900FEDC08 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C59D222026E9544800FEDC08 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C59D221326E953E900FEDC08 /* Assets.xcassets */,
+				C59D221826E953E900FEDC08 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +158,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C59D220F26E953E400FEDC08 /* ViewController.swift in Sources */,
 				C59D220B26E953E400FEDC08 /* AppDelegate.swift in Sources */,
 				C59D220D26E953E400FEDC08 /* SceneDelegate.swift in Sources */,
 			);
@@ -288,7 +308,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XDC2MPU893;
-				INFOPLIST_FILE = DexcomiOSTask/Info.plist;
+				INFOPLIST_FILE = DexcomiOSTask/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XDC2MPU893;
-				INFOPLIST_FILE = DexcomiOSTask/Info.plist;
+				INFOPLIST_FILE = DexcomiOSTask/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
