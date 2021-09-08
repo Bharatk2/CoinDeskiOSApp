@@ -28,7 +28,5 @@ class CoinListViewModel: ObservableObject {
             print(self.coins)
         }
         )
-       
     }
-    
 }
