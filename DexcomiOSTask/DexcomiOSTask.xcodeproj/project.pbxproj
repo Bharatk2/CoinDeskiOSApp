@@ -12,6 +12,7 @@
 		C59D221226E953E400FEDC08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59D221026E953E400FEDC08 /* Main.storyboard */; };
 		C59D221426E953E900FEDC08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C59D221326E953E900FEDC08 /* Assets.xcassets */; };
 		C59D221726E953E900FEDC08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59D221526E953E900FEDC08 /* LaunchScreen.storyboard */; };
+		C59D222726E954E800FEDC08 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D222626E954E800FEDC08 /* Coin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C59D221326E953E900FEDC08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C59D221626E953E900FEDC08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C59D221826E953E900FEDC08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C59D222626E954E800FEDC08 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		C59D222326E9549200FEDC08 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C59D222626E954E800FEDC08 /* Coin.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C59D222726E954E800FEDC08 /* Coin.swift in Sources */,
 				C59D220B26E953E400FEDC08 /* AppDelegate.swift in Sources */,
 				C59D220D26E953E400FEDC08 /* SceneDelegate.swift in Sources */,
 			);
