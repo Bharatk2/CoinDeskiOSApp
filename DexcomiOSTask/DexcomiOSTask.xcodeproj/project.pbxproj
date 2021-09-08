@@ -54,6 +54,11 @@
 		C59D220926E953E400FEDC08 /* DexcomiOSTask */ = {
 			isa = PBXGroup;
 			children = (
+				C59D222526E954AA00FEDC08 /* NetworkingServices */,
+				C59D222426E9549A00FEDC08 /* ModelView */,
+				C59D222326E9549200FEDC08 /* Model */,
+				C59D222226E9548B00FEDC08 /* Views */,
+				C59D222126E9548400FEDC08 /* ViewControllers */,
 				C59D221E26E9542200FEDC08 /* Application */,
 				C59D222026E9544800FEDC08 /* Resources */,
 				C59D221F26E9543100FEDC08 /* Storyboards */,
@@ -86,6 +91,41 @@
 				C59D221826E953E900FEDC08 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C59D222126E9548400FEDC08 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C59D222226E9548B00FEDC08 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C59D222326E9549200FEDC08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C59D222426E9549A00FEDC08 /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
+		C59D222526E954AA00FEDC08 /* NetworkingServices */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkingServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
