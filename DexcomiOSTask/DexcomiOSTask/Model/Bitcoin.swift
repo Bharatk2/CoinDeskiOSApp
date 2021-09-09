@@ -8,7 +8,6 @@
 import Foundation
 
 struct Bitcoin: Decodable {
-    var currency: String
-    var rate: Double
+    var rate: String
     var description: String
 }

@@ -18,7 +18,7 @@ class CoinListViewModel: ObservableObject {
         callAPI()
     }
     func callAPI() {
-        cancellable = fetchListServices.fetchCrypto().sink(receiveCompletion: { completion in
+        cancellable = fetchListServices.fetchCoinsList().sink(receiveCompletion: { completion in
             switch completion {
             case .failure(let error):
                 NSLog("Couldn't fetch coins: \(error)")
