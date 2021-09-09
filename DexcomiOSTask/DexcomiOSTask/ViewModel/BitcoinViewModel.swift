@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+/// The class ``BitcoinViewModel``takes care of calling our fetching services call so we don't have to implement these in our view controllers.
 class BitcoinViewModel: ObservableObject {
     
     // MARK: - Properties
