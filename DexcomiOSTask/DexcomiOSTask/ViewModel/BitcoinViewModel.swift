@@ -9,7 +9,9 @@ import Foundation
 import Combine
 
 class BitcoinViewModel: ObservableObject {
-   
+    
+    // MARK: - Properties
+    // We are assigning published typealias to our view models as we are going to subscribe to the data received from our combine method.
     @Published var coins = [CoinViewModel]()
     @Published var usdCurrency: USDViewModel?
     @Published var eurCurrency: EURViewModel?
@@ -18,16 +20,20 @@ class BitcoinViewModel: ObservableObject {
     var currencyCancellableUSD: AnyCancellable?
     var currencyCancellableGBP: AnyCancellable?
     var currencyCancellableEUR: AnyCancellable?
-
     private let fetchListServices = FetchListServices()
     
+    // MARK: - Initializer
     init() {
-        callAPI()
-     callCurrencies()
+        callCoinListAPI()
+        callCurrencies()
     }
     
-    func callAPI() {
+    // MARK: - Helper Methods
+    
+    func callCoinListAPI() {
+        // cancellable wil deinitialize the call once we are done with it.
         cancellable = fetchListServices.fetchCoinsList().sink(receiveCompletion: { completion in
+            // we are handling completion status
             switch completion {
             case .failure(let error):
                 NSLog("Couldn't fetch coins: \(error)")
@@ -35,6 +41,7 @@ class BitcoinViewModel: ObservableObject {
             case .finished:
                 break
             }
+            // if everything went well we will assign the data to our published model
         }, receiveValue: { container in
             
             self.coins = container.map { CoinViewModel(coin: $0)}
@@ -43,7 +50,27 @@ class BitcoinViewModel: ObservableObject {
     }
     
     func callCurrencies() {
-           currencyCancellableUSD = fetchListServices.fetchCurrenciesUSD().sink(receiveCompletion: { completion in
+        // USD fetching call
+        // cancellable wil deinitialize the call once we are done with it.
+        currencyCancellableUSD = fetchListServices.fetchCurrenciesUSD().sink(receiveCompletion: { completion in
+            switch completion {
+            // we are handling completion status
+            case .failure(let error):
+                NSLog("Couldn't fetch coins: \(error)")
+                
+            case .finished:
+                break
+            }
+            // if everything went well we will assign the data to our published model
+        }, receiveValue: { data in
+            self.usdCurrency =  USDViewModel(usd: data)
+            print(self.usdCurrency)
+        })
+        
+        // GBP fetching call
+        // cancellable wil deinitialize the call once we are done with it.
+        currencyCancellableGBP = fetchListServices.fetchCurrenciesGBP().sink(receiveCompletion: { completion in
+            // we are handling completion status
             switch completion {
             case .failure(let error):
                 NSLog("Couldn't fetch coins: \(error)")
@@ -51,37 +78,27 @@ class BitcoinViewModel: ObservableObject {
             case .finished:
                 break
             }
-           }, receiveValue: { data in
-            self.usdCurrency =  USDViewModel(usd: data)
-            print(self.usdCurrency)
-           })
-
-    
-        currencyCancellableGBP = fetchListServices.fetchCurrenciesGBP().sink(receiveCompletion: { completion in
-         switch completion {
-         case .failure(let error):
-             NSLog("Couldn't fetch coins: \(error)")
-             
-         case .finished:
-             break
-         }
+            // if everything went well we will assign the data to our published model
         }, receiveValue: { data in
             self.gbpCurrency =  GBPViewModel(gbp: data)
-         print(self.gbpCurrency)
+            print(self.gbpCurrency)
         })
-
-    
+        
+        // EUR fetching call
+        // cancellable wil deinitialize the call once we are done with it.
         currencyCancellableEUR = fetchListServices.fetchCurrenciesEUR().sink(receiveCompletion: { completion in
-         switch completion {
-         case .failure(let error):
-             NSLog("Couldn't fetch coins: \(error)")
-             
-         case .finished:
-             break
-         }
+            // we are handling completion status
+            switch completion {
+            case .failure(let error):
+                NSLog("Couldn't fetch coins: \(error)")
+                
+            case .finished:
+                break
+            }
+            // if everything went well we will assign the data to our published model
         }, receiveValue: { data in
             self.eurCurrency =  EURViewModel(eur: data)
-         print(self.eurCurrency)
+            print(self.eurCurrency)
         })
-}
+    }
 }
