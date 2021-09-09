@@ -9,14 +9,21 @@ import Foundation
 import Combine
 
 class CoinListViewModel: ObservableObject {
-    static var shared = CoinListViewModel()
-    @Published var coins = [Coin]()
+   
+    @Published var coins = [CoinViewModel]()
+    @Published var usdCurrency: USD?
+    @Published var eurCurrency: EUR?
+    @Published var gbpCurrency: GBP?
     var cancellable: AnyCancellable?
+    var currencyCancellable: AnyCancellable?
+    
     private let fetchListServices = FetchListServices()
     
     init() {
         callAPI()
+     callCurrencies()
     }
+    
     func callAPI() {
         cancellable = fetchListServices.fetchCoinsList().sink(receiveCompletion: { completion in
             switch completion {
@@ -27,9 +34,19 @@ class CoinListViewModel: ObservableObject {
                 break
             }
         }, receiveValue: { container in
-            self.coins = container.map { Coin(name: $0.name, symbol: $0.symbol, rank: $0.rank) }
-           
+            
+            self.coins = container.map { CoinViewModel(coin: $0)}
         }
         )
     }
+    
+    func callCurrencies() {
+           currencyCancellable = fetchListServices.fetchCurrencies().sink(receiveCompletion: { _ in
+               
+           }, receiveValue: { data in
+               self.usdCurrency = data.bpi.usd
+               self.eurCurrency = data.bpi.eur
+               self.gbpCurrency = data.bpi.gbp
+           })
+       }
 }

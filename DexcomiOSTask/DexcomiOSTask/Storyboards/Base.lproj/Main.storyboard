@@ -11,7 +11,7 @@
         <!--CoinDeskiOS-->
         <scene sceneID="dAx-we-Vey">
             <objects>
-                <viewController id="IbD-SQ-tKM" sceneMemberID="viewController">
+                <viewController id="IbD-SQ-tKM" customClass="BitcoinViewController" customModule="DexcomiOSTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="93y-te-kWs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,21 +23,10 @@
                                     <segment title="GBP"/>
                                     <segment title="EUR"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControllerTapped:" destination="IbD-SQ-tKM" eventType="valueChanged" id="K9g-04-lpF"/>
+                                </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ljv-2z-D8W">
-                                <rect key="frame" x="0.0" y="360" width="414" height="536"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rMm-O6-HM7">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rMm-O6-HM7" id="O6J-Vw-glu">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZe-rq-JyG">
                                 <rect key="frame" x="0.0" y="127" width="414" height="225"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
@@ -46,23 +35,64 @@
                                     <constraint firstAttribute="width" constant="414" id="lDU-V4-P4F"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dI3-2V-h1t">
+                                <rect key="frame" x="140" y="367" width="134" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="arW-r7-9di">
+                                <rect key="frame" x="20" y="417" width="374" height="49"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="164" translatesAutoresizingMaskIntoConstraints="NO" id="Ljf-vx-6zl">
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n83-mC-vRg">
+                                                <rect key="frame" x="0.0" y="0.0" width="84.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Stamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJy-dP-Krc">
+                                                <rect key="frame" x="248.5" y="0.0" width="91.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMt-oG-XmT">
+                                        <rect key="frame" x="0.0" y="28.5" width="87.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W5M-ja-eO1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="KZe-rq-JyG" firstAttribute="trailing" secondItem="W5M-ja-eO1" secondAttribute="trailing" id="4ZO-mH-3Ts"/>
-                            <constraint firstAttribute="bottom" secondItem="Ljv-2z-D8W" secondAttribute="bottom" id="EyJ-OX-iUR"/>
+                            <constraint firstItem="dI3-2V-h1t" firstAttribute="leading" secondItem="W5M-ja-eO1" secondAttribute="leading" constant="140" id="Giy-sU-Ix0"/>
                             <constraint firstItem="KZe-rq-JyG" firstAttribute="leading" secondItem="W5M-ja-eO1" secondAttribute="leading" id="Lfs-Fb-GYR"/>
-                            <constraint firstItem="Ljv-2z-D8W" firstAttribute="leading" secondItem="W5M-ja-eO1" secondAttribute="leading" id="Qy3-OR-VcD"/>
+                            <constraint firstItem="W5M-ja-eO1" firstAttribute="trailing" secondItem="dI3-2V-h1t" secondAttribute="trailing" constant="140" id="Qy4-en-N6f"/>
+                            <constraint firstItem="arW-r7-9di" firstAttribute="top" secondItem="dI3-2V-h1t" secondAttribute="bottom" constant="20" id="UMC-zq-JiH"/>
                             <constraint firstItem="gg5-8o-jLa" firstAttribute="trailing" secondItem="W5M-ja-eO1" secondAttribute="trailing" id="VQ0-FT-Mc6"/>
                             <constraint firstItem="KZe-rq-JyG" firstAttribute="top" secondItem="gg5-8o-jLa" secondAttribute="bottom" constant="8" symbolic="YES" id="Zum-mc-Gag"/>
                             <constraint firstItem="gg5-8o-jLa" firstAttribute="leading" secondItem="W5M-ja-eO1" secondAttribute="leading" id="a3G-eS-AzC"/>
-                            <constraint firstItem="Ljv-2z-D8W" firstAttribute="trailing" secondItem="W5M-ja-eO1" secondAttribute="trailing" id="bq1-Ll-UvJ"/>
-                            <constraint firstItem="Ljv-2z-D8W" firstAttribute="top" secondItem="KZe-rq-JyG" secondAttribute="bottom" constant="8" symbolic="YES" id="gWl-vU-vFk"/>
+                            <constraint firstItem="W5M-ja-eO1" firstAttribute="trailing" secondItem="arW-r7-9di" secondAttribute="trailing" constant="20" id="gIv-Xx-pCH"/>
+                            <constraint firstItem="dI3-2V-h1t" firstAttribute="top" secondItem="KZe-rq-JyG" secondAttribute="bottom" constant="15" id="oNM-Zn-ctS"/>
                             <constraint firstItem="gg5-8o-jLa" firstAttribute="top" secondItem="W5M-ja-eO1" secondAttribute="top" id="pGu-rw-bfF"/>
+                            <constraint firstItem="arW-r7-9di" firstAttribute="leading" secondItem="W5M-ja-eO1" secondAttribute="leading" constant="20" id="shN-Jo-bzk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="CoinDeskiOS" id="BoN-Fb-B9v"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="bMt-oG-XmT" id="2ZK-fk-LFI"/>
+                        <outlet property="priceLabel" destination="n83-mC-vRg" id="Img-4c-nYm"/>
+                        <outlet property="segmentedController" destination="gg5-8o-jLa" id="pwR-OJ-mKQ"/>
+                        <outlet property="timeStamp" destination="aJy-dP-Krc" id="F6o-yX-f23"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qg7-Ec-3jh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

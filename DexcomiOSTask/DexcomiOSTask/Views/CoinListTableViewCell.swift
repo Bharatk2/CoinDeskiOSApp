@@ -6,27 +6,33 @@
 //
 
 import UIKit
-
+import Combine
 class CoinListTableViewCell: UITableViewCell {
     
     var coinlabel = UILabel()
     var symbolLabel = UILabel()
+    private var cancellables = Set<AnyCancellable>()
+    var coinViewModel: CoinViewModel? {
+        didSet {
+            bindViewModel()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        handleConstraints()
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-            super.init(style: style, reuseIdentifier: reuseIdentifier)
-        handleConstraints()
-     }
-
-    required init?(coder aDecoder: NSCoder) {
-       super.init(coder: aDecoder)
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         handleConstraints()
     }
-
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        handleConstraints()
+    }
+    
     func handleConstraints() {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.backgroundColor = .white
@@ -40,7 +46,7 @@ class CoinListTableViewCell: UITableViewCell {
         // ingredientslabel label Constraints
         coinlabel.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 10).isActive = true
         coinlabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5).isActive = true
-      
+        
         // measureLabel name setup
         symbolLabel.font = UIFont(name: "AvenirNext-Semibold", size: 17)
         symbolLabel.textColor = UIColor(named: "#4A4A4A")
@@ -54,5 +60,18 @@ class CoinListTableViewCell: UITableViewCell {
         
     }
     
-
+    private func bindViewModel() {
+        guard let coinViewModel = self.coinViewModel else { return }
+        coinViewModel.$name
+            .receive(on: DispatchQueue.main)
+            .sink { name in
+                self.coinlabel.text = name
+            }.store(in: &cancellables)
+        
+        coinViewModel.$symbol
+            .receive(on: DispatchQueue.main)
+            .sink { name in
+                self.symbolLabel.text = name
+            }.store(in: &cancellables)
+    }
 }

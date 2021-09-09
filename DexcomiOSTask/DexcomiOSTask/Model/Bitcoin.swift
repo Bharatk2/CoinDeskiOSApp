@@ -7,7 +7,27 @@
 
 import Foundation
 
-struct Bitcoin: Decodable {
+struct CurrencyData: Decodable {
+    var bpi: bpi
+}
+struct bpi: Decodable {
+    var usd: USD
+    var gbp: GBP
+    var eur: EUR
+}
+struct USD: Decodable {
     var rate: String
     var description: String
+    var currency: String
+}
+struct GBP: Decodable {
+    var rate: String
+    var description: String
+    var currency: String
+}
+
+struct EUR: Decodable {
+    var rate: String
+    var description: String
+    var currency: String
 }
