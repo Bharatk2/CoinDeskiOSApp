@@ -23,6 +23,14 @@ final class FetchListServices {
                     decoder).receive(on: DispatchQueue.main).eraseToAnyPublisher()
     }
     
-
+    func fetchCurrencies() -> AnyPublisher<[Currency], Error> {
+        let url = Endpoints.currencies.url
+        
+        return URLSession.shared.dataTaskPublisher(for: url).map
+        {
+            $0.data }.decode(type: [Currency].self, decoder: decoder)
+        .receive(on: DispatchQueue.main).eraseToAnyPublisher()
+    }
+    
     
 }

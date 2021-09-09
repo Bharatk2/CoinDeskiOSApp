@@ -19,6 +19,7 @@
 		C59D223526E9606200FEDC08 /* CoinListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D223426E9606200FEDC08 /* CoinListTableViewController.swift */; };
 		C59D223726E9625200FEDC08 /* CoinListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D223626E9625200FEDC08 /* CoinListTableViewCell.swift */; };
 		C5CF87CD26E99C000035352F /* Endpoints+HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CF87CC26E99C000035352F /* Endpoints+HTTPMethod.swift */; };
+		C5CF87CF26E9A4340035352F /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CF87CE26E9A4340035352F /* Currency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C59D223426E9606200FEDC08 /* CoinListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListTableViewController.swift; sourceTree = "<group>"; };
 		C59D223626E9625200FEDC08 /* CoinListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListTableViewCell.swift; sourceTree = "<group>"; };
 		C5CF87CC26E99C000035352F /* Endpoints+HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoints+HTTPMethod.swift"; sourceTree = "<group>"; };
+		C5CF87CE26E9A4340035352F /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			children = (
 				C59D222626E954E800FEDC08 /* Coin.swift */,
 				C59D222826E9553B00FEDC08 /* Bitcoin.swift */,
+				C5CF87CE26E9A4340035352F /* Currency.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				C59D220B26E953E400FEDC08 /* AppDelegate.swift in Sources */,
 				C59D220D26E953E400FEDC08 /* SceneDelegate.swift in Sources */,
 				C59D223526E9606200FEDC08 /* CoinListTableViewController.swift in Sources */,
+				C5CF87CF26E9A4340035352F /* Currency.swift in Sources */,
 				C59D222F26E959C500FEDC08 /* FetchListServices.swift in Sources */,
 				C59D223726E9625200FEDC08 /* CoinListTableViewCell.swift in Sources */,
 				C59D222D26E9596400FEDC08 /* CoinListViewModel.swift in Sources */,
