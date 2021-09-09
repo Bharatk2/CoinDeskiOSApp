@@ -19,7 +19,6 @@ class CoinListViewModel: ObservableObject {
     var currencyCancellableGBP: AnyCancellable?
     var currencyCancellableEUR: AnyCancellable?
 
-
     private let fetchListServices = FetchListServices()
     
     init() {
