@@ -12,10 +12,10 @@ class EURViewModel: ObservableObject, Hashable {
     @Published var description: String
     @Published var currency: String
     
-    init(usd: EUR) {
-        self.currency = usd.currency
-        self.rate = usd.rate
-        self.description = usd.description
+    init(eur: EUR) {
+        self.currency = eur.code
+        self.rate = eur.rate
+        self.description = eur.description
     }
 
     static func == (lhs: EURViewModel, rhs: EURViewModel) -> Bool {

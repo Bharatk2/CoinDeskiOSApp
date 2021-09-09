@@ -35,33 +35,28 @@
                                     <constraint firstAttribute="width" constant="414" id="lDU-V4-P4F"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dI3-2V-h1t">
-                                <rect key="frame" x="140" y="367" width="134" height="30"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="arW-r7-9di">
-                                <rect key="frame" x="20" y="417" width="374" height="49"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="147" translatesAutoresizingMaskIntoConstraints="NO" id="11a-9M-rAj">
+                                <rect key="frame" x="20" y="372" width="374" height="52.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="164" translatesAutoresizingMaskIntoConstraints="NO" id="Ljf-vx-6zl">
-                                        <rect key="frame" x="0.0" y="0.0" width="340" height="20.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6Hm-qw-PlP">
+                                        <rect key="frame" x="0.0" y="0.0" width="147" height="52.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n83-mC-vRg">
-                                                <rect key="frame" x="0.0" y="0.0" width="84.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Eh-7R-7aq">
+                                                <rect key="frame" x="0.0" y="0.0" width="147" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Stamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJy-dP-Krc">
-                                                <rect key="frame" x="248.5" y="0.0" width="91.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMA-eJ-dCC">
+                                                <rect key="frame" x="0.0" y="32" width="147" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMt-oG-XmT">
-                                        <rect key="frame" x="0.0" y="28.5" width="87.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PriceLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckT-GN-NmR">
+                                        <rect key="frame" x="294" y="0.0" width="80" height="52.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -73,25 +68,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="KZe-rq-JyG" firstAttribute="trailing" secondItem="W5M-ja-eO1" secondAttribute="trailing" id="4ZO-mH-3Ts"/>
-                            <constraint firstItem="dI3-2V-h1t" firstAttribute="leading" secondItem="W5M-ja-eO1" secondAttribute="leading" constant="140" id="Giy-sU-Ix0"/>
                             <constraint firstItem="KZe-rq-JyG" firstAttribute="leading" secondItem="W5M-ja-eO1" secondAttribute="leading" id="Lfs-Fb-GYR"/>
-                            <constraint firstItem="W5M-ja-eO1" firstAttribute="trailing" secondItem="dI3-2V-h1t" secondAttribute="trailing" constant="140" id="Qy4-en-N6f"/>
-                            <constraint firstItem="arW-r7-9di" firstAttribute="top" secondItem="dI3-2V-h1t" secondAttribute="bottom" constant="20" id="UMC-zq-JiH"/>
                             <constraint firstItem="gg5-8o-jLa" firstAttribute="trailing" secondItem="W5M-ja-eO1" secondAttribute="trailing" id="VQ0-FT-Mc6"/>
                             <constraint firstItem="KZe-rq-JyG" firstAttribute="top" secondItem="gg5-8o-jLa" secondAttribute="bottom" constant="8" symbolic="YES" id="Zum-mc-Gag"/>
                             <constraint firstItem="gg5-8o-jLa" firstAttribute="leading" secondItem="W5M-ja-eO1" secondAttribute="leading" id="a3G-eS-AzC"/>
-                            <constraint firstItem="W5M-ja-eO1" firstAttribute="trailing" secondItem="arW-r7-9di" secondAttribute="trailing" constant="20" id="gIv-Xx-pCH"/>
-                            <constraint firstItem="dI3-2V-h1t" firstAttribute="top" secondItem="KZe-rq-JyG" secondAttribute="bottom" constant="15" id="oNM-Zn-ctS"/>
+                            <constraint firstItem="11a-9M-rAj" firstAttribute="top" secondItem="KZe-rq-JyG" secondAttribute="bottom" constant="20" id="bnE-eG-Xa4"/>
                             <constraint firstItem="gg5-8o-jLa" firstAttribute="top" secondItem="W5M-ja-eO1" secondAttribute="top" id="pGu-rw-bfF"/>
-                            <constraint firstItem="arW-r7-9di" firstAttribute="leading" secondItem="W5M-ja-eO1" secondAttribute="leading" constant="20" id="shN-Jo-bzk"/>
+                            <constraint firstItem="11a-9M-rAj" firstAttribute="leading" secondItem="W5M-ja-eO1" secondAttribute="leading" constant="20" id="t0z-pH-Tvt"/>
+                            <constraint firstItem="W5M-ja-eO1" firstAttribute="trailing" secondItem="11a-9M-rAj" secondAttribute="trailing" constant="20" id="z6D-zw-lKJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="CoinDeskiOS" id="BoN-Fb-B9v"/>
                     <connections>
-                        <outlet property="descriptionLabel" destination="bMt-oG-XmT" id="2ZK-fk-LFI"/>
-                        <outlet property="priceLabel" destination="n83-mC-vRg" id="Img-4c-nYm"/>
                         <outlet property="segmentedController" destination="gg5-8o-jLa" id="pwR-OJ-mKQ"/>
-                        <outlet property="timeStamp" destination="aJy-dP-Krc" id="F6o-yX-f23"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qg7-Ec-3jh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

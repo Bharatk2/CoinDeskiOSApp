@@ -12,10 +12,10 @@ class GBPViewModel: ObservableObject, Hashable {
     @Published var description: String
     @Published var currency: String
     
-    init(usd: GBP) {
-        self.currency = usd.currency
-        self.rate = usd.rate
-        self.description = usd.description
+    init(gbp: GBP) {
+        self.currency = gbp.code
+        self.rate = gbp.rate
+        self.description = gbp.description
     }
 
     static func == (lhs: GBPViewModel, rhs: GBPViewModel) -> Bool {

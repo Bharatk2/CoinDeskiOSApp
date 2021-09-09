@@ -13,7 +13,7 @@ class USDViewModel: ObservableObject, Hashable {
     @Published var currency: String
     
     init(usd: USD) {
-        self.currency = usd.currency
+        self.currency = usd.code
         self.rate = usd.rate
         self.description = usd.description
     }

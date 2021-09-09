@@ -11,11 +11,14 @@ import Combine
 class CoinListViewModel: ObservableObject {
    
     @Published var coins = [CoinViewModel]()
-    @Published var usdCurrency: USD?
-    @Published var eurCurrency: EUR?
-    @Published var gbpCurrency: GBP?
+    @Published var usdCurrency: USDViewModel?
+    @Published var eurCurrency: EURViewModel?
+    @Published var gbpCurrency: GBPViewModel?
     var cancellable: AnyCancellable?
-    var currencyCancellable: AnyCancellable?
+    var currencyCancellableUSD: AnyCancellable?
+    var currencyCancellableGBP: AnyCancellable?
+    var currencyCancellableEUR: AnyCancellable?
+
     
     private let fetchListServices = FetchListServices()
     
@@ -41,12 +44,45 @@ class CoinListViewModel: ObservableObject {
     }
     
     func callCurrencies() {
-           currencyCancellable = fetchListServices.fetchCurrencies().sink(receiveCompletion: { _ in
-               
+           currencyCancellableUSD = fetchListServices.fetchCurrenciesUSD().sink(receiveCompletion: { completion in
+            switch completion {
+            case .failure(let error):
+                NSLog("Couldn't fetch coins: \(error)")
+                
+            case .finished:
+                break
+            }
            }, receiveValue: { data in
-               self.usdCurrency = data.bpi.usd
-               self.eurCurrency = data.bpi.eur
-               self.gbpCurrency = data.bpi.gbp
+            self.usdCurrency =  USDViewModel(usd: data)
+            print(self.usdCurrency)
            })
-       }
+
+    
+        currencyCancellableGBP = fetchListServices.fetchCurrenciesGBP().sink(receiveCompletion: { completion in
+         switch completion {
+         case .failure(let error):
+             NSLog("Couldn't fetch coins: \(error)")
+             
+         case .finished:
+             break
+         }
+        }, receiveValue: { data in
+            self.gbpCurrency =  GBPViewModel(gbp: data)
+         print(self.gbpCurrency)
+        })
+
+    
+        currencyCancellableEUR = fetchListServices.fetchCurrenciesEUR().sink(receiveCompletion: { completion in
+         switch completion {
+         case .failure(let error):
+             NSLog("Couldn't fetch coins: \(error)")
+             
+         case .finished:
+             break
+         }
+        }, receiveValue: { data in
+         self.eurCurrency =  EURViewModel(usd: data)
+         print(self.eurCurrency)
+        })
+}
 }
