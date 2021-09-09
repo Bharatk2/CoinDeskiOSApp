@@ -11,5 +11,6 @@ struct Bitcoin: Decodable {
     var currency: String
     var rate: Double
     var description: String
-
+ 
+   
 }

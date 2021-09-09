@@ -11,6 +11,7 @@ class CoinListTableViewCell: UITableViewCell {
     
     var coinlabel = UILabel()
     var symbolLabel = UILabel()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
