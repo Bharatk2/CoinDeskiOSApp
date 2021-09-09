@@ -8,14 +8,17 @@
 import UIKit
 import Combine
 class BitcoinViewController: UIViewController {
-    
+    //MARK: - IBOutlets
     @IBOutlet weak var segmentedController: UISegmentedControl!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var currencyLabel: UILabel!
+    
+    //MARK: - Properties
     var bitcoinViewModel = BitcoinViewModel()
     var subscriptions = Set<AnyCancellable>()
     
+    //MARK: - Computed Properties
     var usdViewModel: USDViewModel? {
         didSet {
             updateUSDViews()
@@ -34,19 +37,23 @@ class BitcoinViewController: UIViewController {
         }
     }
     
+    //MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         segmentedControllerUpdate()
     }
-
+    //MARK: - IBOutlet Actions
     @IBAction func segmentedControllerTapped(_ sender: UISegmentedControl) {
+        // Whenever segmentedcontroller is having user interaction it will load the view again.
         DispatchQueue.main.async {
             self.viewDidLoad()
         }
       
     }
     
+    //MARK: - Helper Method
     func segmentedControllerUpdate() {
+        // we are using our segmented controller index to bind our properties and update the view
         switch segmentedController.selectedSegmentIndex {
         case 0:
             bitcoinViewModel.$usdCurrency
