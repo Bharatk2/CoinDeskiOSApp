@@ -12,7 +12,7 @@ enum Endpoints {
     static let coinBaseURL = "https://api.coinpaprika.com/v1/"
     case currencies
     case coinsList
-    case price(String)
+
    
     
     /// We are using switch for stringValue computed property by going through all the cases
@@ -20,9 +20,7 @@ enum Endpoints {
     var stringValue: String {
         switch self {
         case .currencies:
-            return Endpoints.currencyBaseURL + "/supported-currencies.json"
-        case .price(let currency):
-            return Endpoints.currencyBaseURL + "/currentprice" + "/\(currency)" + ".json"
+            return Endpoints.currencyBaseURL + "/currentprice.json"
         case .coinsList:
             return Endpoints.coinBaseURL + "coins"
         }
