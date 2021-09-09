@@ -18,6 +18,7 @@
 		C59D222F26E959C500FEDC08 /* FetchListServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D222E26E959C500FEDC08 /* FetchListServices.swift */; };
 		C59D223526E9606200FEDC08 /* CoinListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D223426E9606200FEDC08 /* CoinListTableViewController.swift */; };
 		C59D223726E9625200FEDC08 /* CoinListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D223626E9625200FEDC08 /* CoinListTableViewCell.swift */; };
+		C5CF87CD26E99C000035352F /* Endpoints+HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CF87CC26E99C000035352F /* Endpoints+HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		C59D222E26E959C500FEDC08 /* FetchListServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchListServices.swift; sourceTree = "<group>"; };
 		C59D223426E9606200FEDC08 /* CoinListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListTableViewController.swift; sourceTree = "<group>"; };
 		C59D223626E9625200FEDC08 /* CoinListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListTableViewCell.swift; sourceTree = "<group>"; };
+		C5CF87CC26E99C000035352F /* Endpoints+HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoints+HTTPMethod.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		C59D220926E953E400FEDC08 /* DexcomiOSTask */ = {
 			isa = PBXGroup;
 			children = (
+				C5CF87CB26E99BE80035352F /* Extensions+Utilities */,
 				C59D222B26E9595300FEDC08 /* ViewModel */,
 				C59D222526E954AA00FEDC08 /* NetworkingServices */,
 				C59D222326E9549200FEDC08 /* Model */,
@@ -146,6 +149,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		C5CF87CB26E99BE80035352F /* Extensions+Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C5CF87CC26E99C000035352F /* Endpoints+HTTPMethod.swift */,
+			);
+			path = "Extensions+Utilities";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C59D222926E9553B00FEDC08 /* Bitcoin.swift in Sources */,
+				C5CF87CD26E99C000035352F /* Endpoints+HTTPMethod.swift in Sources */,
 				C59D222726E954E800FEDC08 /* Coin.swift in Sources */,
 				C59D220B26E953E400FEDC08 /* AppDelegate.swift in Sources */,
 				C59D220D26E953E400FEDC08 /* SceneDelegate.swift in Sources */,

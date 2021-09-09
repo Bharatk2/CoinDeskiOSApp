@@ -16,11 +16,13 @@ final class FetchListServices {
     }()
     
     func fetchCrypto() -> AnyPublisher<[Coin], Error> {
-        let url = URL(string: "https://api.coinpaprika.com/v1/coins")!
+        let url = Endpoints.coinsList.url
         
         return URLSession.shared.dataTaskPublisher(for: url).map {
             $0.data }.decode(type: [Coin].self, decoder:
                     decoder).receive(on: DispatchQueue.main).eraseToAnyPublisher()
     }
+    
+
     
 }
