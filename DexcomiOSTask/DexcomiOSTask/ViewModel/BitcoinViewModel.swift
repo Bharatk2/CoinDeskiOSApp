@@ -1,5 +1,5 @@
 //
-//  CoinListViewModel.swift
+//  BitcoinViewModel.swift
 //  DexcomiOSTask
 //
 //  Created by Bharat Kumar on 9/8/21.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class CoinListViewModel: ObservableObject {
+class BitcoinViewModel: ObservableObject {
    
     @Published var coins = [CoinViewModel]()
     @Published var usdCurrency: USDViewModel?

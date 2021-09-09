@@ -10,7 +10,7 @@ import Combine
 class CoinListTableViewController: UITableViewController {
     var list = [String]()
     var coins = [CoinViewModel]()
-    var coinListViewModel = CoinListViewModel()
+    var coinListViewModel = BitcoinViewModel()
     var subscriptions = Set<AnyCancellable>()
 
     override func viewDidLoad() {

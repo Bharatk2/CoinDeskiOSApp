@@ -15,7 +15,7 @@ class BitcoinViewController: UIViewController {
     @IBOutlet weak var currencyLabel: UILabel!
     
     @IBOutlet weak var timeStamp: UILabel!
-    var coinListViewModel = CoinListViewModel()
+    var bitcoinViewModel = BitcoinViewModel()
     var subscriptions = Set<AnyCancellable>()
     
     var usdViewModel: USDViewModel? {
@@ -51,7 +51,7 @@ class BitcoinViewController: UIViewController {
     func segmentedControllerUpdate() {
         switch segmentedController.selectedSegmentIndex {
         case 0:
-            coinListViewModel.$usdCurrency
+            bitcoinViewModel.$usdCurrency
                .receive(on: DispatchQueue.main)
                .sink { [weak self] items in
                 self?.usdViewModel = items
@@ -62,7 +62,7 @@ class BitcoinViewController: UIViewController {
             
         case 1:
             
-            coinListViewModel.$eurCurrency
+            bitcoinViewModel.$eurCurrency
                .receive(on: DispatchQueue.main)
                .sink { [weak self] items in
                 self?.eurViewModel = items
@@ -70,7 +70,7 @@ class BitcoinViewController: UIViewController {
                .store(in: &subscriptions)
             
         case 2:
-            coinListViewModel.$gbpCurrency
+            bitcoinViewModel.$gbpCurrency
                .receive(on: DispatchQueue.main)
                .sink { [weak self] items in
                 self?.gbpViewModel = items

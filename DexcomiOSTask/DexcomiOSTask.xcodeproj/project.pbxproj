@@ -14,7 +14,7 @@
 		C59D221726E953E900FEDC08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59D221526E953E900FEDC08 /* LaunchScreen.storyboard */; };
 		C59D222726E954E800FEDC08 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D222626E954E800FEDC08 /* Coin.swift */; };
 		C59D222926E9553B00FEDC08 /* Bitcoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D222826E9553B00FEDC08 /* Bitcoin.swift */; };
-		C59D222D26E9596400FEDC08 /* CoinListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D222C26E9596400FEDC08 /* CoinListViewModel.swift */; };
+		C59D222D26E9596400FEDC08 /* BitcoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D222C26E9596400FEDC08 /* BitcoinViewModel.swift */; };
 		C59D222F26E959C500FEDC08 /* FetchListServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D222E26E959C500FEDC08 /* FetchListServices.swift */; };
 		C59D223526E9606200FEDC08 /* CoinListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D223426E9606200FEDC08 /* CoinListTableViewController.swift */; };
 		C59D223726E9625200FEDC08 /* CoinListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D223626E9625200FEDC08 /* CoinListTableViewCell.swift */; };
@@ -36,7 +36,7 @@
 		C59D221826E953E900FEDC08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C59D222626E954E800FEDC08 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		C59D222826E9553B00FEDC08 /* Bitcoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitcoin.swift; sourceTree = "<group>"; };
-		C59D222C26E9596400FEDC08 /* CoinListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListViewModel.swift; sourceTree = "<group>"; };
+		C59D222C26E9596400FEDC08 /* BitcoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinViewModel.swift; sourceTree = "<group>"; };
 		C59D222E26E959C500FEDC08 /* FetchListServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchListServices.swift; sourceTree = "<group>"; };
 		C59D223426E9606200FEDC08 /* CoinListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListTableViewController.swift; sourceTree = "<group>"; };
 		C59D223626E9625200FEDC08 /* CoinListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListTableViewCell.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 		C59D222B26E9595300FEDC08 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C59D222C26E9596400FEDC08 /* CoinListViewModel.swift */,
+				C59D222C26E9596400FEDC08 /* BitcoinViewModel.swift */,
 				C5CF87DA26E9D5C20035352F /* USDViewModel.swift */,
 				C5CF87DC26E9DA0C0035352F /* EURViewModel.swift */,
 				C5CF87DE26E9DA810035352F /* GBPViewModel.swift */,
@@ -254,7 +254,7 @@
 				C59D222F26E959C500FEDC08 /* FetchListServices.swift in Sources */,
 				C5CF87D726E9C7620035352F /* BitcoinViewController.swift in Sources */,
 				C59D223726E9625200FEDC08 /* CoinListTableViewCell.swift in Sources */,
-				C59D222D26E9596400FEDC08 /* CoinListViewModel.swift in Sources */,
+				C59D222D26E9596400FEDC08 /* BitcoinViewModel.swift in Sources */,
 				C5CF87DD26E9DA0C0035352F /* EURViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
