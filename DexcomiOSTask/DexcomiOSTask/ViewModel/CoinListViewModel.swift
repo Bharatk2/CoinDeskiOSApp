@@ -19,7 +19,7 @@ class CoinListViewModel: ObservableObject {
     var currencyCancellableGBP: AnyCancellable?
     var currencyCancellableEUR: AnyCancellable?
 
-    
+
     private let fetchListServices = FetchListServices()
     
     init() {
@@ -81,7 +81,7 @@ class CoinListViewModel: ObservableObject {
              break
          }
         }, receiveValue: { data in
-         self.eurCurrency =  EURViewModel(usd: data)
+            self.eurCurrency =  EURViewModel(eur: data)
          print(self.eurCurrency)
         })
 }
